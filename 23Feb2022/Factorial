@@ -1,0 +1,28 @@
+package basicPrograms;
+
+public class Factorial {
+
+	public static int fibonacciIterative(int number) {
+		if(number==1||number==2)
+			return 1;
+		 return fibonacciIterative(number-1)+fibonacciIterative(number-2);
+	
+	}
+	public static int fibonacciRecursive(int number) {
+		if(number==1||number==2)
+			return 1;
+		 int sum=0,first=1,second=2;
+		 for(int i=3;i<=number;i++) {
+			 sum=first+second;
+			 first=second;
+			 second=sum; 
+		 }
+		 return sum;
+	
+	}
+	public static void main(String[]args) {
+		int number=6;
+		for(int i=1;i<=number;i++)
+		System.out.print(fibonacciRecursive(i)+" ");
+	}
+}
